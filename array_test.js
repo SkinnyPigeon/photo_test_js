@@ -18,8 +18,13 @@ function() {
     assert.equal( 1, a.noOfPhotos() );
   });
 
-  // it( "Should be able to pick a photo", function() {
-  //   assert.equal( 1, a.pickOne() );
+  it( "Should be able to pick a photo", function() {
+    a.addPhoto( 1 );
+    assert.equal( 1, a.pickPhoto() );
+  });
+
+  // it( "Should be able to return the contents of the array", function() {
+  //   assert.equal( 1, )
   // });
 
 });

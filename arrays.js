@@ -1,5 +1,7 @@
 var Arrays = function() {
   this.photos = [];
+  this.position = 0;
+  this.length = 0;
 };
 
 Arrays.prototype = {
@@ -10,6 +12,12 @@ Arrays.prototype = {
 
     addPhoto: function( photo ) {
       this.photos.push( photo );
+    },
+
+    pickPhoto: function() {
+      var link = this.photos[ this.position ];
+      this.position += 1;
+      return link;
     },
 }
 
