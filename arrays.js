@@ -41,11 +41,11 @@ Arrays.prototype = {
       }
     },
 
-    // randomNumber: function() {
-    //   if( this.lengthCheck ) {
-    //     this.position = Math.floor(Math.random() * (this.lastPhoto - 0 + 1)) + 0;
-    //   }
-    // }
+    randomNumber: function() {
+      if( this.loopCheck ) {
+        this.position = Math.floor(Math.random() * (this.lastPhoto - 1));
+      }
+    }
 }
 
 module.exports = Arrays;
