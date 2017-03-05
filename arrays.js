@@ -3,6 +3,7 @@ var Arrays = function() {
   this.position = 0;
   this.numberOfPhotos = 0;
   this.lastPhoto = 1;
+  this.loopCheck = false;
 };
 
 Arrays.prototype = {
@@ -25,18 +26,18 @@ Arrays.prototype = {
     },
 
     lengthCheck: function() {
-      console.log( "Photos: ", this.numberOfPhotos );
       if( this.position >= this.numberOfPhotos ) {
         this.lastPhoto = this.position;
         this.position = 0;
+        this.loopCheck = true;
       };
-      console.log( "Position: ", this.position );
     },
 
     newPhotoCheck: function() {
-      if( this.numberOfPhotos > this.lastPhoto ) {
-        console.log( "Hello" );
-        // this.position = this.lastPhoto + 1;
+      if( this.numberOfPhotos > this.lastPhoto && this.loopCheck ) {
+        this.position = this.lastPhoto;
+        this.loopCheck = false;
+        console.log( this.position );
       }
     }
 }
