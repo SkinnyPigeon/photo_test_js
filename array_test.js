@@ -51,7 +51,50 @@ function() {
     assert.equal( 3, a.pickPhoto() );
   });
 
-  it( "Should be able to")
+  it( "Should be able to do mulitple loops without new photos being added", function() {
+    a.addPhoto( 1 );
+    a.addPhoto( 2 );
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    assert.equal( 1, a.pickPhoto() );
+  });
+
+  it( "Should be able to do a couple loops then take a new photo without falling down", function() {
+    a.addPhoto( 1 );
+    a.addPhoto( 2 );
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.addPhoto( 3 );
+    assert.equal( 3, a.pickPhoto() );
+  });
+
+  it( "Should be able to take a bunch of loops and a bunch of photos", function() {
+    a.addPhoto( 1 );
+    a.addPhoto( 2 );
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.addPhoto( 3 );
+    a.pickPhoto();
+    a.pickPhoto();
+    a.addPhoto( 4 );
+    a.addPhoto( 5 );
+    a.addPhoto( 6 );
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.addPhoto( 7 );
+    a.pickPhoto();
+    a.pickPhoto();
+    assert.equal( 2, a.pickPhoto() );
+  });
 
 });
 

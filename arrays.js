@@ -37,7 +37,6 @@ Arrays.prototype = {
       if( this.numberOfPhotos > this.lastPhoto && this.loopCheck ) {
         this.position = this.lastPhoto;
         this.loopCheck = false;
-        console.log( this.position );
       }
     }
 }
