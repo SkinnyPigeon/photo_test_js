@@ -20,6 +20,7 @@ Arrays.prototype = {
     pickPhoto: function() {
       this.lengthCheck();
       this.newPhotoCheck();
+      // this.randomNumber();
       var link = this.photos[ this.position ];
       this.position += 1;
       return link;
@@ -38,7 +39,13 @@ Arrays.prototype = {
         this.position = this.lastPhoto;
         this.loopCheck = false;
       }
-    }
+    },
+
+    // randomNumber: function() {
+    //   if( this.lengthCheck ) {
+    //     this.position = Math.floor(Math.random() * (this.lastPhoto - 0 + 1)) + 0;
+    //   }
+    // }
 }
 
 module.exports = Arrays;

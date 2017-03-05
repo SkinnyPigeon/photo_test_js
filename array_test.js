@@ -96,6 +96,19 @@ function() {
     assert.equal( 2, a.pickPhoto() );
   });
 
+  it( "Should return a random picture on loops", function() {
+    a.addPhoto( 1 );
+    a.addPhoto( 2 );
+    a.addPhoto( 3 );
+    a.addPhoto( 4 );
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    assert.equal( 2, a.pickPhoto() );
+  });
+
 });
 
 
