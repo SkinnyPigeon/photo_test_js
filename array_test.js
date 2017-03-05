@@ -109,6 +109,18 @@ function() {
     assert.equal( 2, a.pickPhoto() );
   });
 
+  it( "Should pass this test with the random number generator on", function() {
+    a.addPhoto( 1 );
+    a.addPhoto( 2 );
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.addPhoto( 3 );
+    a.addPhoto( 4 );
+    a.pickPhoto();
+    assert.equal( 4, a.pickPhoto() );
+  });
+
 });
 
 
