@@ -20,7 +20,7 @@ function() {
 
   it( "Should be able to pick a photo", function() {
     a.addPhoto( 1 );
-    // assert.equal( 1, a.pickPhoto() );
+    assert.equal( 1, a.pickPhoto() );
   });
 
   it( "Should know the length of the array", function() {
@@ -39,6 +39,16 @@ function() {
     a.pickPhoto();
     a.pickPhoto();
     assert.equal( 1, a.pickPhoto() );
+  });
+
+  it( "Should know if a new photo has been added and automatically go to that one", function() {
+    a.addPhoto( 1 );
+    a.addPhoto( 2 );
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.addPhoto( 3 );
+    assert.equal( 3, a.pickPhoto() );
   });
 
 });
