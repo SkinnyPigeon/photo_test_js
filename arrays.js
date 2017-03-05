@@ -25,16 +25,18 @@ Arrays.prototype = {
     },
 
     lengthCheck: function() {
+      console.log( "Photos: ", this.numberOfPhotos );
       if( this.position >= this.numberOfPhotos ) {
         this.lastPhoto = this.position;
-        console.log( this.lastPhoto );
         this.position = 0;
       };
+      console.log( "Position: ", this.position );
     },
 
     newPhotoCheck: function() {
       if( this.numberOfPhotos > this.lastPhoto ) {
-        this.position = this.lastPhoto + 1;
+        console.log( "Hello" );
+        // this.position = this.lastPhoto + 1;
       }
     }
 }
