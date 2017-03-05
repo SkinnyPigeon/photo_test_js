@@ -20,11 +20,31 @@ function() {
 
   it( "Should be able to pick a photo", function() {
     a.addPhoto( 1 );
+    // assert.equal( 1, a.pickPhoto() );
+  });
+
+  it( "Should know the length of the array", function() {
+    a.addPhoto( 1 );
+    a.addPhoto( 1 );
+    assert.equal( 2, a.noOfPhotos() );
+  });
+
+  it( "Should not be able to go beyond the length of the array", function() {
+    a.addPhoto( 1 );
+    a.addPhoto( 2 );
+    a.addPhoto( 3 );
+    a.addPhoto( 4 );
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
+    a.pickPhoto();
     assert.equal( 1, a.pickPhoto() );
   });
 
-  // it( "Should be able to return the contents of the array", function() {
-  //   assert.equal( 1, )
-  // });
-
 });
+
+
+
+
+
+
